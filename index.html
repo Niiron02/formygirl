@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #d6336c;
+      animation: fadeIn 2s ease-in;
+    }
+    .btn {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+    }
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+      position: relative;
+    }
+    #noBtn:hover {
+      transform: scale(1.1);
+    }
+    #catContainer {
+      margin-top: 20px;
+      display: none;
+    }
+    #catImage {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Will You Be My Valentine Rachana? ❤️</h1>
+  <button class="btn" id="yesBtn" onclick="showCat()">Yes</button>
+  <button class="btn" id="noBtn" onmouseover="moveNo()">No</button>
+  
+  <div id="catContainer">
+    <!-- This image uses a placeholder cat from placekitten.com -->
+    <img id="catImage" src="th.jpg" alt="Cute Cat">
+  </div>
+  
+  <script>
+    function showCat() {
+      document.getElementById("catContainer").style.display = "block";
+      alert("Yay! You said yes! 🥰💖");
+    }
+    function moveNo() {
+      const btn = document.getElementById("noBtn");
+      // Calculate a random position within the viewport
+      const x = Math.floor(Math.random() * (window.innerWidth - btn.clientWidth));
+      const y = Math.floor(Math.random() * (window.innerHeight - btn.clientHeight));
+      btn.style.position = "absolute";
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+</body>
+</html>
